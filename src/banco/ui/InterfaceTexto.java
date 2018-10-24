@@ -22,7 +22,8 @@ public class InterfaceTexto {
 	}
 	
 	private void imprimeMenu() {
-		System.out.println("Contas Banc√°rias");
+		System.out.println();
+		System.out.println("AdministraÁ„o");
 		System.out.println();
 		
 		switch (estadoAtual) {
@@ -39,7 +40,7 @@ public class InterfaceTexto {
 		System.out.println("0 - Sair");
 		
 		System.out.println();
-		System.out.print("Escolha uma op√ß√£o: ");	
+		System.out.print("Escolha uma opÁ„o: ");	
 	}
 	
 	private int leOpcao() {
@@ -49,22 +50,22 @@ public class InterfaceTexto {
 	}
 	
 	private void imprimeMenuPrincipal() {
-		System.out.println("1 - Administra√ß√£o de Clientes");
-		System.out.println("2 - Administra√ß√£o de Contas");
+		System.out.println("1 - Autores");
+		System.out.println("2 - Livros");
 	}
 	
 	private void imprimeMenuCliente() {
-		System.out.println("1 - Adicionar cliente");
-		System.out.println("2 - Editar cliente");
-		System.out.println("3 - Excluir cliente");
-		System.out.println("4 - Listar clientes");
+		System.out.println("1 - Adicionar autor");
+		System.out.println("2 - Editar autor");
+		System.out.println("3 - Excluir autor");
+		System.out.println("4 - Listar autores");
 	}
 	
 	private void imprimeMenuConta() {
-		System.out.println("1 - Adicionar conta");
-		System.out.println("2 - Editar conta");
-		System.out.println("3 - Excluir conta");
-		System.out.println("4 - Listar contas");
+		System.out.println("1 - Adicionar livro");
+		System.out.println("2 - Editar livro");
+		System.out.println("3 - Excluir livro");
+		System.out.println("4 - Listar livros");
 	}
 		
 	public void executa() {
@@ -78,7 +79,7 @@ public class InterfaceTexto {
 				estadoAtual = opcao == OP_CLIENTE ? Estado.CLIENTE : Estado.CONTA;
 			} else {
 				subMenu = estadoAtual == Estado.CLIENTE ? 
-						new InterfaceClienteTexto() : new InterfaceContaTexto();
+						new InterfaceAutorTexto() : new InterfaceLivroTexto();
 				
 				switch (opcao) {
 				case OP_ADICIONAR:
@@ -94,7 +95,7 @@ public class InterfaceTexto {
 					subMenu.listarTodos();
 					break;
 				default:
-					System.out.println("Op√ß√£o Inv√°lida. Tente novamente!");
+					System.out.println("OpÁ„o Inv·lida. Tente novamente!");
 				}
 			}
 			
